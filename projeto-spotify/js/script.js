@@ -128,12 +128,13 @@ function randomArray(preArray)
         preArray[currentIndex] = preArray[randomIndex]
         preArray[randomIndex] = aux;
         currentIndex -= 1;
-
+        //FUNÇÃO PARA SER APLICADA SE UMA CONDIÇÃO FOR ATENDIDA!!!
     }
 }
 
 function shuffleSwitch()
 {
+    
     if(shuffled === false)
     {
         shuffled = true;
