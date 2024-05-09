@@ -7,6 +7,13 @@
     --updated: 0%;
 }
 
+button
+{
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+}
+
 *
 {
     margin: 0px;
@@ -86,14 +93,19 @@ h5
     width: var(--updated);
 }
 
-#container-button
+.container-button
 {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-#container-button, #container-content img
+.container-button img
 {
     filter: var(--filter-img);
+}
+
+.container-button img:active
+{
+   filter: brightness(0) saturate(100%) invert(77%) sepia(75%) saturate(3533%) hue-rotate(50deg) brightness(95%) contrast(86%);
 }

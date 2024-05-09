@@ -3,14 +3,13 @@ const song = document.getElementById("song");
 const imgAlbum = document.querySelector("#container-img img");
 const songName = document.getElementById("songName");
 const artist = document.getElementById("artist");
-const barUpdated = document.getElementById("container-bar-updated");
+const barUpdated = document.querySelector("#container-bar-updated");
 const nextButton = document.getElementById("next-button");
 const backButton = document.getElementById("back-button");
 const barClicked = document.getElementById("container-bar");
+const shuffleButton = document.getElementById("shuffle-button");
 
 
-let play = false;
-let index = 0;
 
 const Mars = {
     songName: "That's What I Like",
@@ -34,6 +33,10 @@ const Fun ={
 }
 
 const arraySong = [Mars, Savage, Fun];
+let newArraySong = [...arraySong];
+let shuffled = false;
+let play = false;
+let index = 0;
 
 function playSong()
 {
@@ -64,23 +67,23 @@ function playPauseDecider()
 function loadingSong()
 {
 
-    imgAlbum.src = `images/${arraySong[index].file}.png`;
-    song.src = `songs/${arraySong[index].file}.mp3`;
-    songName.innerText = `${arraySong[index].songName}`
-    artist.innerText = `${arraySong[index].artist}`
-    document.body.style.backgroundImage = `${arraySong[index].style}`
+    imgAlbum.src = `images/${newArraySong[index].file}.png`;
+    song.src = `songs/${newArraySong[index].file}.mp3`;
+    songName.innerText = `${newArraySong[index].songName}`
+    artist.innerText = `${newArraySong[index].artist}`
+    document.body.style.backgroundImage = `${newArraySong[index].style}`
 }
 
 function barProgress()
 {
-    const barWidth = (song.duration/song.currentTime)*100;
+    const barWidth = (song.currentTime/song.duration)*100;
     barUpdated.style.setProperty("--updated", `${barWidth}%`);
 }
 
 
 function nextSong()
 {
-    if(index === arraySong.length - 1)
+    if(index === newArraySong.length - 1)
     {
         index = 0;
     }
@@ -96,7 +99,7 @@ function backSong()
 {
     if(index === 0)
     {
-        index = arraySong.length - 1;
+        index = newArraySong.length - 1;
     }
     else
     {
@@ -114,6 +117,38 @@ function JumpBar(event)
     song.currentTime = JumpTime;
 }
 
+function randomArray(preArray)
+{
+    let size = preArray.length;
+    let currentIndex = size -1;
+    while(currentIndex > 0)
+    {
+        let randomIndex = Math.floor(Math.random()*size);
+        let aux = preArray[currentIndex];
+        preArray[currentIndex] = preArray[randomIndex]
+        preArray[randomIndex] = aux;
+        currentIndex -= 1;
+
+    }
+}
+
+function shuffleSwitch()
+{
+    if(shuffled === false)
+    {
+        shuffled = true;
+        randomArray(newArraySong);
+        shuffleButton.style.filter = `brightness(0) saturate(100%) invert(63%) sepia(29%) saturate(1456%) hue-rotate(50deg) brightness(109%) contrast(83%)`;
+    }
+    else
+    {
+        shuffled = false;
+        newArraySong = [...arraySong];
+        shuffleButton.style.filter = `brightness(0) saturate(100%) invert(100%) sepia(4%) saturate(7500%) hue-rotate(151deg) brightness(115%) contrast(117%)`;
+        
+    }
+}
+
 loadingSong();
 
 playButton.addEventListener("click", playPauseDecider);
@@ -121,3 +156,4 @@ song.addEventListener("timeupdate", barProgress);
 nextButton.addEventListener("click", nextSong);
 backButton.addEventListener("click", backSong);
 barClicked.addEventListener("click", JumpBar);
+shuffleButton.addEventListener("click", shuffleSwitch);
