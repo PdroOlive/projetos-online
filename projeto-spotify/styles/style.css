@@ -12,6 +12,7 @@ button
     background-color: inherit;
     border: none;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
 *
@@ -35,11 +36,12 @@ body
     justify-content: center;
 }
 
-main
+#container-main
 {
     display: flex;
     flex-direction: column;
     gap: 40px;
+    padding-bottom: 1.5em;
 }
 
 h5
@@ -50,8 +52,8 @@ h5
 
 #container-img
 {
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
     box-shadow: 0px 0px 10px black;
 }
 #container-img img
@@ -75,7 +77,8 @@ h5
 
 #container-bar
 {
-    padding-block: 1em;
+    padding-top: 1em;
+    padding-bottom: 0.5em;
     cursor: pointer;
 }
 
@@ -91,6 +94,14 @@ h5
     height: inherit;
     background-color: white;
     width: var(--updated);
+}
+
+#time-box
+{
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.7rem;
+    padding-bottom: 2.5em;
 }
 
 .container-button

@@ -8,18 +8,20 @@
 </head>
 <body>
     <main>
-        <h5>#PlayList</h5>
-        <div id="container-img">
-            <img src="images/bruno-mars.png" alt="">
-        </div>
-        <section id="container-content">
-            <div id="container-content-text">
-                <h1 id="songName">Nome da musica</h1>
-                <p id="artist">nome do artitsta</p>
+        <section id="container-main">
+            <h5>#PlayList</h5>
+            <div id="container-img">
+                <img src="images/bruno-mars.png" alt="">
             </div>
-            <button class="container-button">
-                <img width="24.5px" src="images/heart.svg" alt="Like Button">
-            </button>
+            <section id="container-content">
+                <div id="container-content-text">
+                    <h1 id="songName">Nome da musica</h1>
+                    <p id="artist">nome do artitsta</p>
+                </div>
+                <button class="container-button">
+                    <img width="24.5px" id="like-button" src="images/heart.svg" alt="Like Button">
+                </button>
+            </section>
         </section>
 
         <audio id="song"></audio>
@@ -29,6 +31,11 @@
                 <div id="container-bar-updated"></div>
             </div>
         </section>
+        <section id="time-box">
+            <div id="current-time">00:00</div>
+            <div id="total-time">00:00</div>
+        </section>
+        
 
         <section class="container-button">
             <button>
