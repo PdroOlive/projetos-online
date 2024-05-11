@@ -128,7 +128,7 @@ function JumpBar(event)
 function randomArray(preArray)
 {
     let size = preArray.length;
-    let currentIndex = size -1;
+    let currentIndex = size - 1;
     while(currentIndex > 0)
     {
         let randomIndex = Math.floor(Math.random()*size);
