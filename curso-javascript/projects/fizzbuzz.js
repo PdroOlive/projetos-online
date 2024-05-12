@@ -16,14 +16,12 @@ function fizzBuzz(input)
     {
         return `Buzz`;
     }
-    else if(input % 3 !== 0 && input % 5 !== 0)
-    {
-        return input;
-    }
+    
+    return input;
     
 }
 
-const exec = fizzBuzz(true);
+const exec = fizzBuzz(11);
 console.log(exec);
 console.log(typeof(exec))
     
