@@ -1,16 +1,8 @@
-let soma = 0;
-for(let i = 0; i <= 10; i++)
+for(let index = 2; index <= 6; index++)
 {
-    if(i % 3 === 0)
-    {    
-        console.log(i)
-        soma += i
+    for(let i = 2; i < index; i++)
+    {
+        console.log(`${i} ${index}`)
     }
-    else if(i % 5 === 0)
-    {    
-        console.log(i)
-        soma += i
-    }
+    
 }
-
-console.log(soma)
