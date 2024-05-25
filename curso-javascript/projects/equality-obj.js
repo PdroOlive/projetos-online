@@ -3,10 +3,9 @@ function registerAddress(road, city, zipCode)
     this.road = road;
     this.city = city;
     this.zipCode = zipCode;
-
 }
 let exec = new registerAddress("Rua de Óbidos", "Belém", "66020-445");
-let execTwo = new registerAddress("Rua", "Belém", "66020-445");
+let execTwo = new registerAddress("Rua", "Belém", "66020-45");
 
 function propertyCheck(exec, execTwo)
 {
@@ -19,10 +18,6 @@ function propertyCheck(exec, execTwo)
             {
                 equality = execTwo[index];
                 console.log(index, equality);
-            }
-            else
-            {
-                return console.log(false);
             }
         }
     }
