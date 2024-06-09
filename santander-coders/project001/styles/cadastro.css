@@ -1,11 +1,20 @@
 @charset "UTF-8";   
 
 
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button, select 
+{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
 #container-back-new
 {
     display: flex;
     align-items: center;
-    font-size: 3.6rem;
+    font-size: 3.0rem;
 }
 
 picture
@@ -19,10 +28,53 @@ picture
     height: 300px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-evenly;    
 }
 
 .container-input
 {
     display: grid;
+    position: relative;
+    
+}
+
+.container-input input, select
+{
+    width: 250px;
+    height: 4rem;
+    border-radius: 12px;
+    border: 1px solid #00000015;
+
+}
+.container-input label
+{
+    font-size: 1.6rem;
+    text-indent: 1.0rem;
+}
+
+button
+{
+    width: 250px;
+    height: 4rem;
+    background-color: #35E6E9;
+    border-radius: 12px;
+    font-size: 1.7rem;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    border: none;
+}
+
+#arrow-select
+{
+    position: absolute;
+    top: 2.0rem;
+    left: 80%;
+    transform: rotate(270deg);
+}
+
+#circle-append
+{
+    position: absolute;
+    top: ;
+    
 }
