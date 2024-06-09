@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/cadastro.css">
+    <title>Cadastro</title>
+</head>
+<body>
+    <main id="container-main">
+        <section id="container-content-one">
+            <picture>
+                <img src="img/dog.png" alt="Imagem de uma pessao com um dog">
+            </picture>
+            <h1><span class="container-span">We</span> Form</h1>
+        </section>
+
+        <section id="container-content-two" class="content-registro">
+            <div id="container-back-new">
+                <picture>
+                    <img src="img/back-pag.png" alt="">
+                </picture>
+                <p>Nova <span class="container-span">Entidade</span></p>
+            </div>
+            <form id="container-form">
+                <div class="container-input">
+                    <label for="iname">Nome</label>
+                    <input type="text" name="name" id="iname">
+                </div>
+
+                <div class="container-input">
+                    <label for="inicho">Campo de Atuação</label>
+                    <select name="nicho" id="inicho">
+                        <option value=""></option>
+                        <option value="nicho1">Entretenimento</option>
+                        <option value="nicho2">Jogos Eletrônicos</option>
+                    </select>
+                </div>
+                
+                <div class="container-input">
+                    <label for="ipontos"> Pontos de Coleta</label>
+                    <input type="number" name="pontos" id="ipontos" min="10">
+                </div>
+            </form>
+            <button id="button-cadastrar">Cadastrar</button>
+        </section>
+    </main>
+</body>
+</html>

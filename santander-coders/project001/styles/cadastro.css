@@ -1,0 +1,28 @@
+@charset "UTF-8";   
+
+
+#container-back-new
+{
+    display: flex;
+    align-items: center;
+    font-size: 3.6rem;
+}
+
+picture
+{
+    display: flex;
+    align-items: center;
+}
+
+#container-form 
+{
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.container-input
+{
+    display: grid;
+}
