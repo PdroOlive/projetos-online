@@ -17,10 +17,16 @@ input::-webkit-inner-spin-button, select
     font-size: 3.0rem;
 }
 
-picture
+picture > a
 {
     display: flex;
     align-items: center;
+    transition: transform 0.5s ease;
+}
+
+picture > a:hover
+{
+    transform: scale(0.9);
 }
 
 #container-form 
@@ -44,6 +50,7 @@ picture
     height: 4rem;
     border-radius: 12px;
     border: 1px solid #00000015;
+    cursor: pointer;
 
 }
 .container-input label
@@ -62,19 +69,25 @@ button
     color: white;
     font-family: "Poppins", sans-serif;
     border: none;
+    cursor: pointer;
 }
 
 #arrow-select
 {
     position: absolute;
     top: 2.0rem;
-    left: 80%;
+    left: 20.0rem;
     transform: rotate(270deg);
+    filter: brightness(0) saturate(100%) invert(89%) sepia(10%) saturate(4740%) hue-rotate(138deg) brightness(101%) contrast(83%);
+    cursor: pointer;
+    z-index: 1;
 }
 
 #circle-append
 {
     position: absolute;
-    top: ;
+    top: 2.8rem;
+    left: 20.7rem;
+    cursor: pointer;
     
 }
