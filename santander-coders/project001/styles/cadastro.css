@@ -1,5 +1,12 @@
 @charset "UTF-8";   
 
+:root
+{
+    font-size: 62.5%;
+    --font-subtitles: 2.5rem;
+    --font-button: 1.7rem;
+    --font-text: 1.6rem;
+}
 
 
 input::-webkit-outer-spin-button,
@@ -14,7 +21,7 @@ input::-webkit-inner-spin-button, select
 {
     display: flex;
     align-items: center;
-    font-size: 3.0rem;
+    font-size: var(--font-subtitles);
 }
 
 picture > a
@@ -34,7 +41,7 @@ picture > a:hover
     height: 300px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;    
+    justify-content: space-evenly;
 }
 
 .container-input
@@ -57,6 +64,7 @@ picture > a:hover
 {
     font-size: 1.6rem;
     text-indent: 1.0rem;
+    text-align: start;
 }
 
 button
