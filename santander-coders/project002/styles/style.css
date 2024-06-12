@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+*
+{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body
+{
+    height: 100vh;
+    max-width: 100%;
+}
+
+header
+{
+    background-image: url(../img/header-img.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 1080px;
+}
+
+
+#list
+{
+    list-style: none;
+    
+    display: flex;
+    justify-content: space-evenly;
+}
