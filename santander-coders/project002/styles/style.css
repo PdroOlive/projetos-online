@@ -1,11 +1,15 @@
 @charset "UTF-8";
 
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
 *
 {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    font-family: ;
+    font-family: "Lato", sans-serif;
+    font-weight: 500;
+    color: white;
 }
 
 :root
@@ -17,15 +21,18 @@ body
 {
     height: 100vh;
     max-width: 100%;
+
 }
 
 header
 {
+    box-shadow:inset 0 0 350px rgb(0, 0, 0);
     background-image: url(../img/header-img.png);
-    background-position: center center;
+    background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 1080px;
+    height: 400px;
+    position: relative;
 }
 
 #full-menu
@@ -45,9 +52,14 @@ header
 
 #full-menu ul:nth-child(2)
 {
-    width: 200px;
+    width: 150px;
     padding-inline: 1rem;
+    
+}
 
+#list-two li:nth-child(2), #list-two li:nth-child(1)
+{
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7480%) hue-rotate(43deg) brightness(118%) contrast(100%);
 }
 
 .list
@@ -56,4 +68,50 @@ header
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+#header-title > img
+{
+    position: absolute;
+    top: 50%;
+    left: 2rem;
+    transform: translateY(-50%);
+    width: 210px;
+}
+
+p
+{
+    position: absolute;
+    top: 65%;
+    left: 2rem;
+    font-size: 1.5rem;
+}
+
+#container-buttons
+{
+    position: absolute;
+    top: 85%;
+    left: 2rem;
+    display: flex;
+    gap: 3rem;
+
+}
+
+button
+{
+    background: transparent;
+    border: none;
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7480%) hue-rotate(43deg) brightness(118%) contrast(100%);
+}
+
+button > img
+{
+    width: 30px;
+}
+
+main
+{
+    height: 100vh;
+    background-color: black;
+    box-shadow: 0 -60px 60px black;
 }
