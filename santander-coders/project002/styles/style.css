@@ -12,6 +12,19 @@
     color: white;
 }
 
+body::-webkit-scrollbar
+{
+    background-color: black;
+    width: 4px;
+}
+
+body::-webkit-scrollbar-thumb
+{
+    background-color: red;
+    border-radius: 50%;
+}
+
+
 :root
 {
     font-size: 62.5%;
@@ -33,7 +46,7 @@ header
     background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 400px;
+    height: 454px;
     position: relative;
 }
 
@@ -96,7 +109,7 @@ p
     padding-inline: 2rem;
     display: flex;
     gap: 3rem;
-
+    z-index: 2;
 }
 
 button
@@ -113,40 +126,28 @@ button > img
 
 main
 {
-    height: 100vh;
     position: absolute;
-    top: 345px;
-    max-width: 100%;
+    box-shadow: 0 -20px 169px 88px black;
+    margin: auto;
 }
 
-#container-mylist
+.container-mylist
 {
     padding-inline: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    width: 100%;
+    padding-bottom: 2rem;
 }
 
 .container-movie
-{    
+{
     display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: 1rem 1rem;
-    width: 100%;
+    gap: 0.5rem 0rem;
+    padding-top: 1rem;
+    overflow: hidden;
 }
 
-.container-movie > picture
+
+.container-movie > img
 {
-    width: 216px;
+    width: 221px;
     height: 120px;
-    object-fit: cover;
-}
-
-.container-movie > picture > img
-{
-    width: 100%;
-    height: 100%;
 }
