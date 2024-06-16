@@ -128,26 +128,27 @@ main
 {
     position: absolute;
     box-shadow: 0 -20px 169px 88px black;
-    margin: auto;
 }
 
 .container-mylist
 {
     padding-inline: 2rem;
     padding-bottom: 2rem;
+    max-width: 100vw;
+
 }
 
 .container-movie
 {
     display: flex;
-    gap: 0.5rem 0rem;
+    gap: 0.5rem;
     padding-top: 1rem;
     overflow: hidden;
 }
 
-
 .container-movie > img
 {
     width: 221px;
-    height: 120px;
 }
+
+
