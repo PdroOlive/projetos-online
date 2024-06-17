@@ -139,7 +139,7 @@ main
 }
 
 
-#arrow-back
+.back
 {
     position: absolute;
     z-index: 1;
@@ -149,9 +149,11 @@ main
     visibility: hidden;
     opacity: 0;
     cursor: pointer;
+    transform: scale(0.8);
+    transition: all 0.5s ease-in-out;
 }
 
-#arrow-next
+.next
 {
     position: absolute;
     z-index: 1;
@@ -159,7 +161,7 @@ main
     left: 98%;
     transform: translate(-98%, -50%) rotate(180deg);
     padding-left: 2rem;
-    cursor: pointer;
+    cursor: pointer;    
 }
 
 .container-movie
@@ -170,8 +172,10 @@ main
     padding-top: 1rem;
     overflow-x: auto;
     overflow-y: hidden;
-    height: 126px;
     z-index: 0;
+    scrollbar-width: none;
+    transition: all 0.5s ease-in-out;
+
 }
 
 .container-movie::-webkit-scrollbar
@@ -181,11 +185,20 @@ main
 
 .container-movie > img
 {
-    position: relative;
-    width: 221px;
-    height: 100%;
+    width: 300px;
     filter: brightness(0.5);
-    display: inline-block;
 }
 
+.show-effect
+{
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
 
+.disable
+{
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.8);
+}
