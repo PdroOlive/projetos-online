@@ -9,7 +9,7 @@
 <body>
     <header>
         <nav id="full-menu">
-            <ul class="list">
+            <ul class="list" id="one-list">
                 <li>Inicio</li>
                 <li>Séries</li>
                 <li>Filmes</li>
@@ -32,7 +32,7 @@
         </div>
     </header>
     <main>
-        <section class="container-mylist">
+        <section class="container-mylist container">
             <h2>Minha Lista</h2>
             <picture id="arrow-back" class="button back">
                 <img src="img/arrow.svg" alt="">
@@ -40,7 +40,7 @@
             <picture id="arrow-next" class="button next">
                 <img src="img/arrow.svg" alt="">
             </picture>
-            <section class="container-movie">
+            <section class="container-movie movie-list">
                 <img src="img/mylist/poster_02.png" alt="minha lista poster 1">
                 <img src="img/mylist/poster_03.png" alt="minha lista poster 2">
                 <img src="img/mylist/poster_04.png" alt="minha lista poster 3">
@@ -54,9 +54,16 @@
                 <img src="img/mylist/poster_04.png" alt="minha lista poster 11">
             </section>
         </section>
-        <section class="container-mylist">
+
+        <section class="container-topten container">
             <h2>Top 10</h2>
-            <section class="container-movie">
+            <picture id="prev-topten" class="topten-button back">
+                <img src="img/arrow.svg" alt="">
+            </picture>
+            <picture id="next-topten" class="topten-button next">
+                <img src="img/arrow.svg" alt="">
+            </picture>
+            <section class="container-movie-topten movie-list">
                 <img src="img/top10/poster_01.png" alt="top 10 poster 1">
                 <img src="img/top10/poster_02.png" alt="top 10 poster 2">
                 <img src="img/top10/poster_03.png" alt="top 10 poster 3">
@@ -70,7 +77,50 @@
                 <img src="img/top10/poster_02.png" alt="top 10 poster 11">
             </section>
         </section>
+        <section class="container-foreign container">
+            <h2>Séries Estrangeiras</h2>
+            <picture id="prev-foreign" class="foreign-button back">
+                <img src="img/arrow.svg" alt="">
+            </picture>
+            <picture id="next-foreign" class="foreign-button next">
+                <img src="img/arrow.svg" alt="">
+            </picture>
+            <section class="container-movie-foreign movie-list">
+                <img src="img/serie-gringa/poster_01.png" alt="Série Gringa poster 1">
+                <img src="img/serie-gringa/poster_03.png" alt="Série Gringa poster 2">
+                <img src="img/serie-gringa/poster_06.png" alt="Série Gringa poster 3">
+                <img src="img/serie-gringa/poster_05.png" alt="Série Gringa poster 4">
+                <img src="img/serie-gringa/poster_08.png" alt="Série Gringa poster 5">
+                <img src="img/serie-gringa/poster_09.png" alt="Série Gringa poster 6">
+                <img src="img/serie-gringa/poster_16.png" alt="Série Gringa poster 7">
+                <img src="img/serie-gringa/poster_17.png" alt="Série Gringa poster 8">
+            </section>
+        </section>
+        <section class="container-newseries container">
+            <h2>Novas Séries</h2>
+            <picture id="prev-new" class="newseries-button back">
+                <img src="img/arrow.svg" alt="">
+            </picture>
+            <picture id="next-new" class="newseries-button next">
+                <img src="img/arrow.svg" alt="">
+            </picture>
+            <section class="container-movie-newseries movie-list">
+                <img src="img/new-series/explained.png" alt="Séries Nova poster 1">
+                <img src="img/new-series/into-the-night.png" alt="Séries Nova poster 2">
+                <img src="img/new-series/last-kingdom.png" alt="Séries NOva poster 3">
+                <img src="img/new-series/lock-key.png" alt="Séries Nova poster 4">
+                <img src="img/new-series/queens-gambit.png" alt="Séries Nova poster 5">
+                <img src="img/new-series/social-dilemma.png" alt="Séries Nova poster 6">
+                <img src="img/new-series/the-crown.png" alt="Séries Nova poster 7">
+                <img src="img/new-series/the-five.png" alt="Séries Nova poster 8">
+                <img src="img/new-series/the-universe.png" alt="Séries Nova poster 9">
+                <img src="img/new-series/you.png" alt="Séries NOva poster 10">
+            </section>
+        </section>
     </main>
+    <footer>
+        
+    </footer>
     <script src="js/script.js"></script>
 </body>
 </html>
