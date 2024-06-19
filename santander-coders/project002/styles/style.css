@@ -54,6 +54,8 @@ header
     background-size: cover;
     height: 454px;
     position: relative;
+    transition: height 0.5s ease;
+    z-index: -1;
 }
 
 #full-menu
@@ -63,7 +65,7 @@ header
     padding-inline: 1rem;
 }
 
-#full-menu ul:nth-child(1)
+#full-menu > ul:nth-child(1)
 {
     width: 400px;
     height: 20px;
@@ -74,9 +76,10 @@ header
     align-items: flex-start;
     gap: 2rem;
     padding-inline-start: 1rem;
+    transition: all 0.5s ease;
 }
 
-#full-menu ul:nth-child(2)
+#full-menu > ul:nth-child(2)
 {
     width: 50px;
     cursor: pointer;
@@ -84,10 +87,10 @@ header
     flex-direction: column-reverse;
     gap: 1rem;
     padding-inline: 1rem;
-    
+    transition: all 0.5s ease;
 }
 
-#list-two li:nth-child(2), #list-two li:nth-child(1)
+#list-two > li:nth-child(2), #list-two > li:nth-child(1)
 {
     filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7480%) hue-rotate(43deg) brightness(118%) contrast(100%);
 }
@@ -127,7 +130,7 @@ header
     width: 250px;
 }
 
-p
+#text-sinopse
 {
     position: absolute;
     top: 45%;
@@ -143,11 +146,10 @@ p
     padding-inline: 2rem;
     display: flex;
     gap: 3rem;
-    z-index: 2;
     padding-top: 2rem;
 }
 
-button
+.button-header
 {
     cursor: pointer;
     background: transparent;
@@ -155,16 +157,16 @@ button
     filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7480%) hue-rotate(43deg) brightness(118%) contrast(100%);
 }
 
-button > img
+.button-header > img
 {
     width: 30px;
 }
 
 main
 {
-    position: absolute;
-    box-shadow: 0 -20px 169px 88px black;
-    z-index: 1;
+    /* position: ; */
+    box-shadow: 0 -10px 99px 70px black;
+    z-index: 2;
 }
 
 .container
@@ -240,4 +242,153 @@ main
     opacity: 0;
     visibility: hidden;
     transform: scale(0.8);
+}
+
+#image-footer
+{
+    padding-inline: 2rem;
+    display: flex;
+    list-style: none;
+    gap: 3rem;
+    padding-bottom: 4rem;
+}
+
+#image-footer img
+{
+    width: 24px;
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7480%) hue-rotate(43deg) brightness(118%) contrast(100%);
+}
+
+#container-footer-content
+{
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    padding-inline: 2rem;
+    transition: all 0.5s ease;
+}
+
+#container-footer-content > ul, a
+{
+    list-style: none;
+    text-decoration: none;
+    color: #888888;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+}
+
+#button-footer
+{
+    background-color: transparent;
+    border: 1px solid #888888;
+    margin: 2rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+    color: #888888;
+    cursor: pointer;
+}
+#text-footer-copy
+{
+    color: #888888;
+    padding-inline: 2rem;
+    font-size: 1.2rem;
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px)
+{
+    header
+    {
+        height: 500px;
+    }
+    #text-sinopse
+    {
+        font-size: 2rem;
+        width: 600px;
+    }
+    #full-menu > ul:nth-child(1)
+    {
+        display: flex;
+        gap: 5rem;
+        width: 500px;
+    }
+    #full-menu > ul:nth-child(2)
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 4rem;
+    }
+    #container-footer-content
+    {
+        gap: 4rem;
+        justify-content: space-between;
+    }
+
+}
+@media screen and (min-width: 992px) and (max-width: 1200px)
+{
+    header
+    {
+        height: 700px;
+    }
+    #text-sinopse
+    {
+        font-size: 2rem;
+        width: 600px;
+    }
+    #full-menu > ul:nth-child(1)
+    {
+        display: flex;
+        gap: 5rem;
+        width: 500px;
+    }
+    #full-menu > ul:nth-child(2)
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 4rem;
+    }
+    #container-footer-content
+    {
+        gap: 0rem;
+        justify-content: space-between;
+
+    }
+}
+@media screen and (min-width: 1201px)
+{
+    header
+    {
+        height: 854px;
+    }
+    #text-sinopse
+    {
+        font-size: 2rem;
+        width: 600px;
+    }
+    #full-menu > ul:nth-child(1)
+    {
+        display: flex;
+        gap: 5rem;
+        width: 500px;
+    }
+    #full-menu > ul:nth-child(2)
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 4rem;
+    }
+    #container-footer-content
+    {
+        gap: 0rem;
+        justify-content: space-between;
+
+    }
+    #header-title > img
+    {
+        width: 500px;
+        padding-bottom: 6rem;
+    }
 }
