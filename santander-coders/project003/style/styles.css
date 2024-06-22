@@ -1,0 +1,124 @@
+@charset "UTF-8";
+
+*
+{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #21243D;
+}
+
+
+:root
+{
+    font-size: 62.5%;
+}
+
+
+body
+{
+    height: 100vh;
+}
+
+
+
+
+#container-list
+{
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin: 1rem 11.4rem 0 0;
+}
+
+#container-list .list-nav
+{
+    font-size: 1.6rem;
+}
+
+#container-main
+{
+    padding-top: 3.3rem;
+    width: 375px;
+    margin: auto;
+}
+
+#container-aboutme
+{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 3rem;
+    padding-bottom: 5.8rem;
+}
+
+#mini-title
+{
+    font-size: 3.3rem;
+    line-height: 4rem;
+    text-align: center;
+}
+
+#text-aboutme
+{
+    font-size: 1.7rem;
+    text-align: center;
+    padding: 3.3rem 0;
+}
+
+#button
+{
+    width: 20.8rem;
+    height: 4.7rem;
+    border: none;
+    border-radius: 0.2rem;
+    font-weight: 500;
+    font-size: 2rem;
+    background-color: #00A8CC;
+    color: white;
+    margin: auto;
+    display: block;
+}
+
+#container-recent-notices
+{
+    background-color: #EDF7FA;
+    padding-inline: 1.1rem;
+}
+
+
+
+#title-contaiter-notices
+{
+    font-size: 1.6rem;
+    text-align: center;
+    padding-block: 3rem;
+}
+
+.notices
+{
+    background-color: white;
+    border-radius: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding-left: 1.9rem;
+}
+
+.notices-title
+{
+    font-size: 2.2rem;
+    padding-top: 1rem;
+}
+
+.span-data, .text-notices
+{
+    font-size: 1.6rem;
+}
+
+#container-recent-notices :nth-child(3)
+{
+    margin-block: 2rem;
+}
