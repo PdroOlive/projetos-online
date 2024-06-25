@@ -7,6 +7,5 @@ let arrayCon = number.concat(string); // Matches arrays.
 console.log(arrayCon);
 
 
-let cut = arrayCon.slice(); // slice have two funcitons, cut arrays matches and copy arrays.
+let cut = arrayCon.slice(2); // slice have two funcitons, cut arrays matches and copy arrays.
 console.log(cut);
-

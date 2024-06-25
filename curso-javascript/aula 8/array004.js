@@ -6,5 +6,5 @@ console.log(number);
 number.shift(); // Remove first element of array.
 console.log(number);
 
-number.splice(1, 1); // Remove element referent is paramater.
+number.splice(1); // Remove element referent is paramater.
 console.log(number);
