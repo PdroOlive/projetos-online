@@ -1,3 +1,5 @@
+//CALLBACK FUNCTIONS
+
 // const readFile = require("fs");
 
 // console.log("ANTES");
@@ -8,8 +10,11 @@
 // });
 // console.log("DEPOIS"); 
 
-console.log("ANTES");
+// console.log("ANTES");
 
-setTimeout(() => console.log("Hello World"), 2000)
+// setTimeout(() => console.log("Hello World"), 2000)
 
-console.log("DEPOIS");
+// console.log("DEPOIS");
+
+
+
