@@ -1,6 +1,20 @@
-function somar(num1:number, num2:number)
-{
-    return num1 + num2;
-}
+// let num = 10; //Inferência de Tipo
 
-console.log(somar(20, 3));
+// const pi = 3.1415;
+
+// let nome = "Pedro";
+
+// let boo = true;
+
+// let resultado = num * pi; 
+
+// const userName = prompt("Qual é o seu nome?");
+
+// console.log(userName?.toLowerCase());
+
+// number[] or arrNumber<number>
+const arrNumber = [3, 54, 53, 23];
+
+// const misto = ["Pedro", 20, 1.78]; union type
+
+const userAges:number[] = []
