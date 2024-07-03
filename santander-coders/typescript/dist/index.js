@@ -9,4 +9,10 @@
 // number[] or arrNumber<number>
 const arrNumber = [3, 54, 53, 23];
 // const misto = ["Pedro", 20, 1.78]; union type
-const userAges = [];
+const userAges = [23, 54, 42, 63, 15, 18];
+const currentAge = userAges.filter((ages) => ages > 18); //Inferência de tipo função de alta ordem
+console.log(currentAge);
+const pessoa = {
+    nome: "Pedro",
+    idade: 20,
+};
