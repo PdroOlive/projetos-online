@@ -5,15 +5,15 @@ interface IPerson
     cpf: string;
     conta: number;
 
-    dormir
+    dormir: () => void;
 }
 
 
 class Pessoa implements IPerson
-{
+{ 
     nome: string;
     idade: number;
-    cpf: string;
+    private _cpf: string;
     conta: number;
     
 
@@ -21,7 +21,7 @@ class Pessoa implements IPerson
     {
         this.nome = nome;
         this.idade = idade;
-        this.cpf = cpf; 
+        this._cpf = cpf; 
         this.conta = conta;
     }
 
@@ -29,8 +29,24 @@ class Pessoa implements IPerson
     {
         console.log("Dormindo....😴😴")
     }
+
+    get cpf(): string
+    {
+        return this._cpf;
+    }
+    
+    set cpf(newCpf: string)
+    {
+        if(newCpf.length !== 14) throw new Error("CPF INVÁLIDO!!!");
+
+        this._cpf = newCpf;
+    }
 }
 
 const personOne = new Pessoa("Pedro", 20, "334.434.233-90", 4345);
 
 console.log(personOne.dormir());
+console.log(personOne.cpf);
+personOne.cpf = "434.679.527-36";
+console.log(personOne.cpf);
+
