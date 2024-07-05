@@ -10,3 +10,12 @@ body
 {
     background-color: rgb(87, 87, 87);
 }
+button
+{
+    background-color: gray;
+}
+
+#iinput
+{
+    color: black;
+}
