@@ -6,15 +6,15 @@ const listField = document.getElementById("container-list");
 const genericFun = () =>
 {
     if(addTaskInput.value === "")
-         alert("Informe sua tarefa!!!")
-     else
-     {
-         inputValue = addTaskInput.value;
-         const newTagList = document.createElement("li");
-         newTagList.innerHTML = inputValue;
-         listField.appendChild(newTagList);
-         addTaskInput.value = "";
-     }
+        alert("Informe sua tarefa!!!")
+    else
+    {
+        inputValue = addTaskInput.value;
+        const newTagList = document.createElement("li");
+        newTagList.innerHTML = inputValue;
+        listField.appendChild(newTagList);
+        addTaskInput.value = "";
+    }
 }
 formField.onsubmit = () => 
 {
