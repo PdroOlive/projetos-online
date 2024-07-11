@@ -5,6 +5,7 @@ const listField = document.getElementById("container-list");
 
 let arrayOfList = [];
 
+
 const genericFun = () =>
 {
     if(addTaskInput.value === "")
@@ -15,8 +16,9 @@ const genericFun = () =>
         arrayOfList.push
         ({
             title: inputValue,
-            done: false
+            done: false,
         });
+        localStorage.setItem("array", JSON.stringify(arrayOfList));
 
         const newTagList = document.createElement("li");
 
@@ -29,20 +31,26 @@ const genericFun = () =>
         newTagCheckBox.addEventListener("change", (event) =>
         {   
             const removeList = event.target.parentElement;
+            if(event.target.checked === true)
+            {
 
-            const removetoArray = removeList.querySelector("span").innerHTML;
+                const removeToArray = removeList.querySelector("span").textContent;
 
-            arrayOfList.filter(t => t.title !== removetoArray)
+                arrayOfList = arrayOfList.filter(t => t.title !== removeToArray)
 
-            listField.removeChild(removeList);
-            console.log(arrayOfList);
+                listField.removeChild(removeList);
+
+                localStorage.setItem("array", JSON.stringify(arrayOfList));
+            }
         })
+
         newTagList.appendChild(newTagCheckBox);
         newTagList.appendChild(newTagSpan)
         listField.appendChild(newTagList);
         addTaskInput.value = "";
     }
 } 
+
 formField.onsubmit = () => 
 {
     genericFun()    

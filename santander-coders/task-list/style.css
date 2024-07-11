@@ -12,3 +12,8 @@ p
 {
     text-decoration: line-through;
 }
+
+.li
+{
+    opacity: 0.1;
+}
