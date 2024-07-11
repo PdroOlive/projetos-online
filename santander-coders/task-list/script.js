@@ -3,6 +3,7 @@ const addTaskInput = document.getElementById("add-task");
 const addTaskButton = document.getElementById("apply-add-task");
 const listField = document.getElementById("container-list");
 
+let arrayOfList = [];
 
 const genericFun = () =>
 {
@@ -11,13 +12,37 @@ const genericFun = () =>
     else
     {
         let inputValue = addTaskInput.value;
+        arrayOfList.push
+        ({
+            title: inputValue,
+            done: false
+        });
+
         const newTagList = document.createElement("li");
+
+        const newTagCheckBox = document.createElement("input");
+        newTagCheckBox.setAttribute("type", "checkbox");
+
+        const newTagSpan = document.createElement("span");
+        newTagSpan.innerHTML = inputValue;
+
+        newTagCheckBox.addEventListener("change", (event) =>
+        {   
+            const removeList = event.target.parentElement;
+
+            const removetoArray = removeList.querySelector("span").innerHTML;
+
+            arrayOfList.filter(t => t.title !== removetoArray)
+
+            listField.removeChild(removeList);
+            console.log(arrayOfList);
+        })
+        newTagList.appendChild(newTagCheckBox);
+        newTagList.appendChild(newTagSpan)
         listField.appendChild(newTagList);
-        createCheckBox(newTagList)
-        createSpan(inputValue, newTagList);
         addTaskInput.value = "";
     }
-}
+} 
 formField.onsubmit = () => 
 {
     genericFun()    
@@ -25,19 +50,4 @@ formField.onsubmit = () =>
 }
 
 
-const createCheckBox = (tagList) =>
-{
-    const newTagCheckBox = document.createElement("input");
-    newTagCheckBox.setAttribute("type", "checkbox");
-    tagList.appendChild(newTagCheckBox);
-    newTagCheckBox.addEventListener("change", () => document.querySelector("ul#container-list span").classList.add("check"))
-}
-
-
-const createSpan = (valueInput, tagList) =>
-{
-    const newTagSpan = document.createElement("span");
-    newTagSpan.innerHTML = valueInput;
-    tagList.appendChild(newTagSpan);
-}
 
