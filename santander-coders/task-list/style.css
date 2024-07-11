@@ -3,3 +3,12 @@ button
     cursor: pointer;
 }
 
+p
+{
+    text-decoration: line-through;
+}
+
+.check
+{
+    text-decoration: line-through;
+}

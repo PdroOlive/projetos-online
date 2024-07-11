@@ -3,17 +3,18 @@ const addTaskInput = document.getElementById("add-task");
 const addTaskButton = document.getElementById("apply-add-task");
 const listField = document.getElementById("container-list");
 
+
 const genericFun = () =>
 {
     if(addTaskInput.value === "")
         alert("Informe sua tarefa!!!")
     else
     {
-        inputValue = addTaskInput.value;
+        let inputValue = addTaskInput.value;
         const newTagList = document.createElement("li");
         listField.appendChild(newTagList);
-        createCheckBox()
-        createSpan(inputValue);
+        createCheckBox(newTagList)
+        createSpan(inputValue, newTagList);
         addTaskInput.value = "";
     }
 }
@@ -24,32 +25,19 @@ formField.onsubmit = () =>
 }
 
 
-const createCheckBox = () =>
+const createCheckBox = (tagList) =>
 {
     const newTagCheckBox = document.createElement("input");
-    tagList = document.querySelector("ul#container-list li");
-    tagList.appendChild(newTagCheckBox);
     newTagCheckBox.setAttribute("type", "checkbox");
+    tagList.appendChild(newTagCheckBox);
+    newTagCheckBox.addEventListener("change", () => document.querySelector("ul#container-list span").classList.add("check"))
 }
 
 
-const createSpan = (valueInput) =>
+const createSpan = (valueInput, tagList) =>
 {
     const newTagSpan = document.createElement("span");
-    tagList = document.querySelector("ul#container-list li");
-    tagList.appendChild(newTagSpan);
     newTagSpan.innerHTML = valueInput;
+    tagList.appendChild(newTagSpan);
 }
-// addTaskButton.addEventListener("click", () => 
-// {
-//     if(addTaskInput.value === "")
-//         alert("Informe sua tarefa!!!")
-//     else
-//     {
-//         inputValue = addTaskInput.value;
-//         const newTagList = document.createElement("li");
-//         newTagList.innerHTML = inputValue;
-//         listField.appendChild(newTagList);
-//         addTaskInput.value = "";
-//     }
-// });
+
