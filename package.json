@@ -1,6 +1,8 @@
 {
   "dependencies": {
-    "readline-sync": "^1.4.10"
+    "readline-sync": "^1.4.10",
+    "webpack": "^5.93.0",
+    "webpack-cli": "^5.1.4"
   },
   "name": "projetos-online",
   "description": "Meus Projetos feitos afins de aprimorar meus conhecimentos!",
