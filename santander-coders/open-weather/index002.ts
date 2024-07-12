@@ -46,9 +46,9 @@ fieldForm?.addEventListener("submit", async (event) =>
         }
         inputLocation.value = "";
     }
-    catch
+    catch(err)
     {
-        alert("Errorr")
+        console.log("Error", err);
     }
 });
 
