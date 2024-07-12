@@ -1,0 +1,107 @@
+@charset "UTF-8";
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+}
+
+:root
+{
+    font-size: 62.5%;
+}
+
+body
+{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(48, 48, 48);
+}
+
+h1
+{
+    text-align: center;
+}
+
+#container-main
+{
+    border-radius: 10px;
+    padding: 5rem;
+    background-color: rgba(255, 255, 255, 0.055);
+    backdrop-filter: blur(100%);
+}
+
+#container-form
+{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 3rem;
+    padding-block: 3rem;
+}
+
+
+#container-form > input
+{
+    border-radius: 5px;
+    height: 3.0rem;
+    text-indent: 1rem;
+    border: none;
+    box-shadow: 0 0 5px black;
+    transition: transform 0.6s ease;
+    color: black;
+
+}
+
+#container-form > input:focus
+{
+    outline: none;
+    transform: scale(1.05);
+}
+
+button
+{
+    background-color: transparent;
+    border: none;
+    box-shadow: 0 0 5px black;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 0.3rem;
+    transition: transform 0.6s ease, background-color 0.3s ease;
+    cursor: pointer;
+}
+button:active
+{
+    transform: scale(1.05);
+    background-color: green;
+
+}
+
+#container-weather
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+}
+
+
+#city-temp h2:first-child
+{
+    font-size: 2.5rem;
+    font-weight: 400;
+}
+#city-temp h2:nth-child(3)
+{
+    font-weight: 100;
+    font-size: 1.7rem;
+}
+#span-weather
+{
+    font-size: 4rem;
+}
