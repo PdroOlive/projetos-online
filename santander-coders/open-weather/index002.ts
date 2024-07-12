@@ -1,3 +1,7 @@
+import { saudacao, PI } from "./ex.js";
+
+saudacao()
+console.log(PI)
 const fieldForm = document.querySelector("#container-form");
 const inputLocation: HTMLInputElement | null = document.querySelector("#ilocation");
 const fieldWeather = document.querySelector("#container-weather");

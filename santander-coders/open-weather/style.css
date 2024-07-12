@@ -33,7 +33,7 @@ h1
     border-radius: 10px;
     padding: 5rem;
     background-color: rgba(255, 255, 255, 0.055);
-    backdrop-filter: blur(100%);
+    transition: all 0.6s ease;
 }
 
 #container-form
