@@ -1,7 +1,3 @@
-import { saudacao, PI } from "./ex.js";
-
-saudacao()
-console.log(PI)
 const fieldForm = document.querySelector("#container-form");
 const inputLocation: HTMLInputElement | null = document.querySelector("#ilocation");
 const fieldWeather = document.querySelector("#container-weather");
@@ -44,9 +40,9 @@ fieldForm?.addEventListener("submit", async (event) =>
             <img id="weather-image" src="${storageWeather.icon}" alt="">
         `
 
-        if(storageWeather.desc === "céu limpo")
+        if(storageWeather.desc === "céu limpo" && new Date().getHours() >= 18)
         {
-            document.body.style.backgroundImage = `url()`;
+            document.body.style.backgroundImage = `url(./assets/clear-sky-night.jpg)`;
         }
         inputLocation.value = "";
     }
