@@ -11,8 +11,52 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 const fieldForm = document.querySelector("#container-form");
 const inputLocation = document.querySelector("#ilocation");
 const fieldWeather = document.querySelector("#container-weather");
-fieldForm === null || fieldForm === void 0 ? void 0 : fieldForm.addEventListener("submit", (event) => __awaiter(void 0, void 0, void 0, function* () {
-    event.preventDefault();
+const renderWeb = () => {
+    const weatherOnStorage = localStorage.getItem("weather");
+    if (!weatherOnStorage)
+        return;
+    const arrayWeather = [JSON.parse(weatherOnStorage)];
+    arrayWeather.forEach((index) => {
+        let stormy = index.id >= 200 && index.id <= 232 ? true : false;
+        let rain = index.id >= 500 && index.id <= 531 ? true : false;
+        let clear = index.id === 800 ? true : false;
+        let clouds = index.id >= 801 && index.id <= 804 ? true : false;
+        fieldWeather.innerHTML =
+            `
+            <div id="city-temp">
+                <h2 class="weather-infos">${index.city} </h2>
+                <span id="span-weather">${index.tem}°C</span>
+                <h2 class="weather-infos"> ${index.desc} </h2>
+            </div>
+            <img id="weather-image" src="${index.icon}" alt="">
+        `;
+        if (stormy && new Date().getHours() <= 17) {
+            document.body.style.backgroundImage = `url("./assets/stormy-day.jpeg")`;
+        }
+        else if (stormy && new Date().getHours() >= 18) {
+            document.body.style.backgroundImage = `url("./assets/stormy-night.jpeg")`;
+        }
+        else if (rain && new Date().getHours() <= 17) {
+            document.body.style.backgroundImage = `url("./assets/rain-day.jpeg")`;
+        }
+        else if (rain && new Date().getHours() >= 18) {
+            document.body.style.backgroundImage = `url("./assets/rain-night.jpeg")`;
+        }
+        else if (clouds && new Date().getHours() <= 17) {
+            document.body.style.backgroundImage = `url(./assets/clouds-day.jpeg)`;
+        }
+        else if (clouds && new Date().getHours() >= 18) {
+            document.body.style.backgroundImage = `url(./assets/clouds-night.jpeg)`;
+        }
+        else if (clear && new Date().getHours() <= 17) {
+            document.body.style.backgroundImage = `url("./assets/clear-sky-day.jpg")`;
+        }
+        else if (clear && new Date().getHours() >= 18) {
+            document.body.style.backgroundImage = `url("./assets/clear-sky-night.jpg")`;
+        }
+    });
+};
+const genericFun = () => __awaiter(void 0, void 0, void 0, function* () {
     if (!inputLocation || !fieldWeather)
         return;
     const location = inputLocation.value;
@@ -29,7 +73,13 @@ fieldForm === null || fieldForm === void 0 ? void 0 : fieldForm.addEventListener
             tem: Math.round(dataWeather.main.temp),
             icon: `https://openweathermap.org/img/wn/${dataWeather.weather[0].icon}@2x.png`,
             desc: dataWeather.weather[0].description,
+            id: dataWeather.weather[0].id,
         };
+        localStorage.setItem("weather", JSON.stringify(storageWeather));
+        let stormy = storageWeather.id >= 200 && storageWeather.id <= 232 ? true : false;
+        let rain = storageWeather.id >= 500 && storageWeather.id <= 531 ? true : false;
+        let clear = storageWeather.id === 800 ? true : false;
+        let clouds = storageWeather.id >= 801 && storageWeather.id <= 804 ? true : false;
         fieldWeather.innerHTML =
             `
             <div id="city-temp">
@@ -40,27 +90,40 @@ fieldForm === null || fieldForm === void 0 ? void 0 : fieldForm.addEventListener
             <img id="weather-image" src="${storageWeather.icon}" alt="">
         `;
         inputLocation.value = "";
-        if (dataWeather.weather[0].id >= 801 && dataWeather.weather[0].id <= 803 && new Date().getHours() <= 17) {
-            document.body.style.backgroundImage = `url(./assets/few-clouds-day.jpg)`;
-        }
-        else if (dataWeather.weather[0].id >= 801 && dataWeather.weather[0].id <= 803 && new Date().getHours() >= 18) {
-            document.body.style.backgroundImage = `url(./assets/few-clouds-night.jpg)`;
-        }
-        else if (dataWeather.weather[0].id === 800 && new Date().getHours() <= 17) {
-            document.body.style.backgroundImage = `url("./assets/clear-sky-day")`;
-        }
-        else if (dataWeather.weather[0].id === 800 && new Date().getHours() <= 17) {
-            document.body.style.backgroundImage = `url("./assets/clear-sky-night")`;
-        }
-        else if (dataWeather.weather[0].id >= 200 && dataWeather.weather[0].id <= 232 && new Date().getHours() <= 17) {
+        if (stormy && new Date().getHours() <= 17) {
             document.body.style.backgroundImage = `url("./assets/stormy-day.jpeg")`;
         }
-        else if (dataWeather.weather[0].id >= 200 && dataWeather.weather[0].id <= 232 && new Date().getHours() >= 18) {
+        else if (stormy && new Date().getHours() >= 18) {
             document.body.style.backgroundImage = `url("./assets/stormy-night.jpeg")`;
+        }
+        else if (rain && new Date().getHours() <= 17) {
+            document.body.style.backgroundImage = `url("./assets/rain-day.jpeg")`;
+        }
+        else if (rain && new Date().getHours() >= 18) {
+            document.body.style.backgroundImage = `url("./assets/rain-night.jpeg")`;
+        }
+        else if (clouds && new Date().getHours() <= 17) {
+            document.body.style.backgroundImage = `url(./assets/clouds-day.jpeg)`;
+        }
+        else if (clouds && new Date().getHours() >= 18) {
+            document.body.style.backgroundImage = `url(./assets/clouds-night.jpeg)`;
+        }
+        else if (clear && new Date().getHours() <= 17) {
+            document.body.style.backgroundImage = `url("./assets/clear-sky-day.jpg")`;
+        }
+        else if (clear && new Date().getHours() >= 18) {
+            document.body.style.backgroundImage = `url("./assets/clear-sky-night.jpg")`;
         }
     }
     catch (err) {
         console.log("Error", err);
     }
-}));
+});
+fieldForm === null || fieldForm === void 0 ? void 0 : fieldForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    genericFun();
+});
+window.onload = () => {
+    renderWeb();
+};
 // npm install webpack webpack-cli
