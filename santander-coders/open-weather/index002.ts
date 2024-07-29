@@ -39,12 +39,34 @@ fieldForm?.addEventListener("submit", async (event) =>
             </div>
             <img id="weather-image" src="${storageWeather.icon}" alt="">
         `
-
-        if(storageWeather.desc === "céu limpo" && new Date().getHours() >= 18)
-        {
-            document.body.style.backgroundImage = `url(./assets/clear-sky-night.jpg)`;
-        }
         inputLocation.value = "";
+
+        if(dataWeather.weather[0].id >= 801 && dataWeather.weather[0].id <= 803 && new Date().getHours() <= 17)
+        {
+            document.body.style.backgroundImage = `url(./assets/few-clouds-day.jpg)`;
+        }
+        else if(dataWeather.weather[0].id >= 801 && dataWeather.weather[0].id <= 803 && new Date().getHours() >= 18)
+        {
+            document.body.style.backgroundImage = `url(./assets/few-clouds-night.jpg)`;
+        }
+        else if(dataWeather.weather[0].id === 800 && new Date().getHours() <= 17)
+        {
+            document.body.style.backgroundImage = `url("./assets/clear-sky-day")`;
+        }
+        else if(dataWeather.weather[0].id === 800 && new Date().getHours() <= 17)
+        {
+            document.body.style.backgroundImage = `url("./assets/clear-sky-night")`;
+        }
+        else if(dataWeather.weather[0].id >= 200 && dataWeather.weather[0].id <= 232 && new Date().getHours() <= 17)
+        {
+            document.body.style.backgroundImage = `url("./assets/stormy-day.jpeg")`;
+        }
+        else if(dataWeather.weather[0].id >= 200 && dataWeather.weather[0].id <= 232 && new Date().getHours() >= 18)
+        {
+            document.body.style.backgroundImage = `url("./assets/stormy-night.jpeg")`;
+        }
+
+        
     }
     catch(err)
     {
